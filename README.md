@@ -15,7 +15,7 @@
       - rspec-rails 4.0.1
       - rspec-support 3.10.0
   ```
- - To run the tests: `$ rspec test`. You can also run an individual file: `$ rspec test/FILE.rb` or even a single test: `$ rspec test/dish_spec.rb:LINE NUMBER`
+ - To run the tests: `$ rspec spec`. You can also run an individual file: `$ rspec spec/FILE.rb` or even a single test: `$ rspec spec/dish_spec.rb:LINE NUMBER`
 * Complete the activity below.
 * Push your solution to your forked repo
 * Submit a pull request from your repository to this repository
