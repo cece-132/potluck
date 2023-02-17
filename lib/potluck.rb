@@ -35,4 +35,10 @@ class Potluck
     end
     hash
   end
+
+  def ratio(category)
+    menu_hash.each do |h_category, dishes|
+      return (dishes.length.to_f / @dishes.length) * 100 if h_category == "#{category}s".to_sym
+    end
+  end
 end
