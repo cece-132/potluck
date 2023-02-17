@@ -19,26 +19,16 @@ class Potluck
   end
 
   def menu
-    menu_hash.each do |category, dishes|
-      dishes.sort!
-    end
-  end
-
-  def menu_hash
-    hash = {}
+    types = {}
     @dishes.each do |dish|
-      if !hash[:"#{dish.category}s"].nil?
-        hash[:"#{dish.category}s"] << dish.name
-      else
-        hash[:"#{dish.category}s"] = [dish.name]
+      if !types[:"#{dish.category}s"]
+        types[:"#{dish.category}s"] = (get_all_from_category(dish.category).map { |dish| dish.name}).sort
       end
     end
-    hash
+    types
   end
 
   def ratio(category)
-    menu_hash.each do |h_category, dishes|
-      return (dishes.length.to_f / @dishes.length) * 100 if h_category == "#{category}s".to_sym
-    end
+    (get_all_from_category(category).length.to_f / dishes.length) * 100
   end
 end
